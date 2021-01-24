@@ -15,8 +15,9 @@ middleware = [
     Middleware(CORSMiddleware, allow_origins=['*'])
 ]
 
-modela = load_model("../Sentiment.h5")
-modelb = load_model("../lungs(1).h5")
+print(os.listdir("./app"))
+modela = load_model("./app/Sentiment.h5")
+modelb = load_model("./app/lungs(1).h5")
 im = ImageModel(modelb)
 sm = SentimentModel(modela)
 
