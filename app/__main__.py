@@ -4,6 +4,7 @@ from starlette.requests import Request
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn
+import os
 
 
 from app.sentiment_model import SentimentModel
@@ -14,11 +15,11 @@ middleware = [
     Middleware(CORSMiddleware, allow_origins=['*'])
 ]
 
+modela = load_model("../Sentiment.h5")
+modelb = load_model("../lungs(1).h5")
+im = ImageModel(modelb)
+sm = SentimentModel(modela)
 
-model = load_model("../Sentiment.h5")
-models = load_model("../lungs(1).h5")
-im = ImageModel(models)
-sm = SentimentModel(model)
 
 
 app = Starlette(middleware=middleware)

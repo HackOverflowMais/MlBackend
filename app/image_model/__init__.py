@@ -1,4 +1,7 @@
 import numpy as np
+import os
+import keras
+import tensorflow
 from keras.models import load_model
 from keras.preprocessing import image
 
@@ -6,7 +9,6 @@ from keras.preprocessing import image
 class ImageModel:
     def __init__(self, model):
         self.model = model
-
     def model_predict(self, img_path):
         img = image.load_img(img_path, target_size=(150, 150))
         x = image.img_to_array(img)

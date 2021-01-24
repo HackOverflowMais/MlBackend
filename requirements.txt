@@ -1,0 +1,7 @@
+tensorflow
+keras
+scipy
+Pillow
+starlette
+uvicorn
+python-multipart
