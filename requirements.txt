@@ -1,4 +1,5 @@
-tensorflow
+#tensorflow
+#Buildpack heroku create --buildpack https://github.com/tensorflow/tensorflow.git
 keras
 scipy
 Pillow
